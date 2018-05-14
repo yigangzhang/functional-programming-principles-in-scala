@@ -110,5 +110,22 @@ class FunSetSuite extends FunSuite {
     }
   }
 
+  test("map") {
+    new TestSets {
+      val u12 = union(s1, s2)
+      val u123 = union(u12, s3)
+      assert(contains(u123, 1), "Union 1")
+      assert(contains(u123, 2), "Union 2")
+      assert(contains(u123, 3), "Union 3")
+
+      val s = map(u123, x => x - 1)
+      assert(!contains(s, -1), "Union 0")
+      assert(contains(s, 0), "Union 0")
+      assert(contains(s, 1), "Union 1")
+      assert(contains(s, 2), "Union 2")
+      assert(!contains(s, 3), "Union 3")
+      assert(!contains(s, 4), "Union 3")
+    }
+  }
 
 }
