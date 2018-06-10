@@ -24,5 +24,3 @@ object List {
 }
 
 //val list = List(1,2)
-
-
